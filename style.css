@@ -1,0 +1,177 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(#FDD967, #e5bb32);
+}
+.wrapper {
+  width: 90%;
+  max-width: 500px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background-color: #ffffff;
+  padding: 5em 3em;
+  border-radius: 0.8em;
+}
+.num-of-tries-left {
+  text-align: right;
+  margin-bottom: 2em;
+}
+.num-of-tries-left span {
+  font-weight: 600;
+}
+.container {
+  font-size: 1.87em;
+  display: flex;
+  justify-content: space-around;
+}
+#letter-container {
+  margin: 2em 0 3em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.letters {
+  width: 2em;
+  height: 2em;
+  background-color: #ffffff;
+  border: 2px solid #FDD967;
+  border-radius: 0.3em;
+  color: #FDD967;
+  cursor: pointer;
+}
+#userInputSection {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+.controls-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(#FDD967, #e5bb32);
+
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+#start {
+  background-color: #ffffff;
+  font-size: 1.4em;
+  padding: 0.8em 2em;
+  border-radius: 0.3em;
+  box-shadow: 0 10px #000000;
+  cursor: pointer;
+  transition: 0.1s;
+}
+#start:active {
+  box-shadow: 0 0 #000000;
+  transform: translateY(7px);
+}
+.hide {
+  display: none;
+}
+.used {
+  background-color: #94fd67;
+  border-color: #94fd67;
+  color: #fff;
+}
+.wrong{
+
+  background-color: #f33131;
+  border-color: #f33131;
+  color: #fff;
+  transform: translateX(-2px);
+  animation: shake 0.5s ease-in-out;
+
+  
+}
+@keyframes shake {
+  0% { transform: translate(-2px); }
+  25% { transform: translate(2px); }
+  50% { transform: translate(-2px); }
+  75% { transform: translate(2px); }
+  100% { transform: translate(-2px); }
+}
+#result{
+
+  font-size: 32px;
+  margin-bottom: 10px;
+
+
+}
+@keyframes winningAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flashColors {
+  0%, 100% {
+    background-color: #62f331;
+    color: #fff;
+  }
+  50% {
+    background-color: #fff;
+    color: #62f331;
+  }
+}
+
+.winning {
+  padding: 10px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  animation: winningAnimation 0.5s ease-in-out infinite, flashColors 1s ease-in-out infinite;
+}
+
+@keyframes losingAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.losing {
+
+  padding: 10px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  animation: losingAnimation 0.5s ease-in-out infinite alternate;
+}
